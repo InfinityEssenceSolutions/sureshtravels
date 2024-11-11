@@ -1,485 +1,857 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title>Suresh Tours & Travels</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800&display=swap" rel="stylesheet">
+<head>
+  <title>Suresh Tours & Travels</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
-    <link rel="stylesheet" href="css/animate.css">
+  <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800&display=swap"
+    rel="stylesheet">
 
-    <link href = "images/ST.png" rel = "icon">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
-    <link rel="stylesheet" href="css/owl.carousel.min.css">
-    <link rel="stylesheet" href="css/owl.theme.default.min.css">
-    <link rel="stylesheet" href="css/magnific-popup.css">
+  <link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
+  <link rel="stylesheet" href="css/animate.css">
+  <link href = "images/ST.png" rel = "icon">
 
-    <link rel="stylesheet" href="css/aos.css">
+  <link rel="stylesheet" href="css/owl.carousel.min.css">
+  <link rel="stylesheet" href="css/owl.theme.default.min.css">
+  <link rel="stylesheet" href="css/magnific-popup.css">
 
-    <link rel="stylesheet" href="css/ionicons.min.css">
+  <link rel="stylesheet" href="css/aos.css">
 
-    <link rel="stylesheet" href="css/bootstrap-datepicker.css">
-    <link rel="stylesheet" href="css/jquery.timepicker.css">
+  <link rel="stylesheet" href="css/ionicons.min.css">
+
+  <link rel="stylesheet" href="css/bootstrap-datepicker.css">
+  <link rel="stylesheet" href="css/jquery.timepicker.css">
 
 
-    <link rel="stylesheet" href="css/flaticon.css">
-    <link rel="stylesheet" href="css/icomoon.css">
-    <link rel="stylesheet" href="css/style.css">
-  </head>
-  <body>
+  <!-- google fonts-------------- -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@100;200;300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="css/flaticon.css">
+  <link rel="stylesheet" href="css/icomoon.css">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://kit.fontawesome.com/a46f18e48c.js" crossorigin="anonymous"></script>
+  <style>
+      .card-image-container {
+        position: relative;
+        overflow: hidden;
+    }
 
-    <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+    .card-image {
+        width: 100%;
+        height: 100%;
+        background-size: cover;
+        background-position: center;
+    }
+
+    .enquiry-label {
+        position: absolute;
+        top: 10px;
+        left: 0;
+        background-color: #2a9d8f;
+        color: white;
+        padding: 5px 15px;
+        font-size: 12px;
+        font-weight: bold;
+        text-transform: uppercase;
+        border-top-right-radius: 3px;
+        border-bottom-right-radius: 3px;
+    }
+
+    .enquiry-label::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        right: -10px;
+        transform: translateY(-50%);
+        width: 0;
+        height: 0;
+        border-top: 10px solid transparent;
+        border-bottom: 10px solid transparent;
+        border-left: 10px solid #2a9d8f;
+    }
+/* Center logo and brand text styling */
+
+/* Hide small logo and text on desktop */
+/* Hide main logo on mobile */
+@media (max-width: 991px) {
+  .navbar-brand.d-none.d-lg-block {
+    display: none;
+  }
+
+  .mobile-logo {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+  }
+
+  .logo-sm {
+    width: 30px; /* Adjust size as needed */
+    height: auto;
+    margin-right: 8px;
+  }
+
+  .small-text {
+    font-size: 12px;
+    color: #000;
+  }
+}
+/* Decrease the height of the carousel */
+.hero-carousel .carousel-item {
+  height: 500px; /* Adjust height as needed */
+  background-size: cover;
+  background-position: center;
+}
+
+.hero-carousel .carousel-caption {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+}
+#ftco-navbar {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+#ftco-navbar .navbar-brand .logo,
+#ftco-navbar .mobile-logo .logo-sm {
+  height: 40px; /* Adjust logo size */
+  width: auto;
+}
+
+#ftco-navbar .nav-link {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+#ftco-navbar .navbar-toggler {
+  padding: 0.25rem 0.75rem;
+}
+table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 20px 0;
+        font-size: 18px;
+        text-align: left;
+    }
+    th, td {
+        padding: 12px;
+        border: 1px solid #ddd;
+        text-align: center; /* Center align text in table cells */
+    }
+    thead th {
+        background-color: #f2f2f2;
+    }
+    .icon {
+        font-size: 40px;
+        color: #007bff;
+        margin-right: 20px;
+    }
+
+    .car-info {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .card {
+        display: inline-block;
+        padding: 10px 15px;
+        border-radius: 6px;
+        background-color: #f2f2f2;
+        font-size: 16px;
+        font-weight: bold;
+        color: #333;
+    }
+    .vehicle-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 15px;
+    }
+
+    /* Responsive styling for mobile view */
+    @media (max-width: 768px) {
+        .vehicle-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+    .list-unstyled li {
+        margin-bottom: 10px;
+        font-size: 16px;
+    }
+
+    .bi-check-circle-fill {
+        margin-right: 8px;
+    }
+    .enquiry-button-side {
+    position: fixed;
+    top: 50%;
+    right: 30px;
+    transform: translateY(-50%) rotate(-90deg); /* Rotate the button text */
+    transform-origin: right center; /* Adjust the rotation anchor */
+    background-color: #2a9d8f; /* Adjust color as needed */
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    border-radius: 50px;
+    font-weight: bold;
+    text-decoration: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  }
+
+  .enquiry-button-side:hover {
+    background-color: #2a9d8f; /* Darker shade on hover */
+  }
+  .footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+  }
+
+  .footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .footer-section h5 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: bold;
+  }
+
+  .footer-section p,
+  .footer-section a {
+    margin: 5px 0;
+    color: #ccc;
+    font-size: 14px;
+    text-decoration: none;
+  }
+
+  .footer-section a:hover {
+    color: #fff;
+    text-decoration: underline;
+  }
+  .footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+  }
+
+  .footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .footer-section h5 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: bold;
+  }
+
+  .footer-section p,
+  .footer-section a {
+    margin: 5px 0;
+    color: #ccc;
+    font-size: 14px;
+    text-decoration: none;
+  }
+
+  .footer-section a:hover {
+    color: #fff;
+    text-decoration: underline;
+  }
+  </style>
+</head>
+
+<body>
+
+    <div class="container-fluid topbar px-4 py-2" style="background-color: #2a9d8f; position: sticky; top: 0; z-index: 1020;">
+        <div class="row gx-0 align-items-center">
+          <!-- Left Side: Gmail and Phone Number -->
+          <div class="col-12 col-lg-8 text-center text-lg-start mb-2 mb-lg-0">
+            <div class="d-flex flex-wrap justify-content-center justify-content-lg-start">
+              <a href="mailto:sureshtravels529@gmail.com" class="text-white small me-4 mb-2 mb-lg-0">
+                <i class="fa fa-envelope text-white me-2"></i>sureshtravels529@gmail.com
+              </a>
+              <a href="tel:+9195023 60032" class="text-white small mb-2 mb-lg-0">
+                <i class="fas fa-phone-alt text-white me-2"></i>+91 95023 60032/ 90109 36936
+              </a>
+            </div>
+          </div>
+
+          <!-- Right Side: Book Now and Pay Now Buttons -->
+          <div class="col-12 col-lg-4 text-center text-lg-end">
+            <div class="d-inline-flex align-items-center justify-content-center justify-content-lg-end">
+              <a href="book-now.html" class="btn btn-success btn-sm me-2 mb-2 mb-lg-0">Book Now</a>
+              <a href="pay.html" class="btn btn-danger btn-sm mb-2 mb-lg-0">Pay Now</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-white ftco_navbar" id="ftco-navbar">
         <div class="container">
-            <img src = "images/ST.png">
-            <a class="navbar-brand" href="index.html">Suresh <span>Tours & Travels</span></a>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav"
-            aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="oi oi-menu"></span> Menu
+          <!-- Mobile View: Left Corner Logo and Text -->
+          <div class="mobile-logo d-lg-none">
+            <img src="images/ST.png" alt="Small Logo" class="logo-sm">
+            <span class="small-text">Suresh Tours</span>
+          </div>
+
+          <!-- Mobile Toggle Button (Visible on mobile view) -->
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
           </button>
 
-          <div class="collapse navbar-collapse" id="ftco-nav">
-            <ul class="navbar-nav ml-auto">
-              <li class="nav-item  "><a href="index.html" class="nav-link">Home</a></li>
-              <li class="nav-item active"><a href="about.html" class="nav-link">About</a></li>
-              <li class="nav-item"><a href="services.html" class="nav-link">Packages</a></li>
-              <li class="nav-item"><a href="vehicles.html" class="nav-link">Car Rentals</a></li>
+          <!-- Left side links -->
+          <ul class="navbar-nav me-auto collapse navbar-collapse" id="navbarNav">
+            <li class="nav-item">
+              <a href="index.html" class="nav-link">Home</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="carRentalsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Car Rentals
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="carRentalsDropdown">
+                <li><a class="dropdown-item" href="car-rentals-page.html">Hourly Rentals</a></li>
+                <li><a class="dropdown-item" href="car-rentals-page.html">Day Rentals</a></li>
+                <li><a class="dropdown-item" href="car-rentals-page.html">Out Station Rentals</a></li>
+                <li><a class="dropdown-item" href="car-rentals-page.html">Unlimited Rental Plan</a></li>
+                <li><a class="dropdown-item" href="car-rentals-page.html">Pickup & Drop Services</a></li>
+                <li><a class="dropdown-item" href="car-rentals-page.html">Airport Transfers</a></li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="packagesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Packages
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="packagesDropdown">
+                <li><a class="dropdown-item" href="services.html">Unlimited Packages</a></li>
+                <li><a class="dropdown-item" href="services.html">Tirumala Packages</a></li>
+              </ul>
+            </li>
+          </ul>
 
-              <!-- <li class="nav-item"><a href="car.html" class="nav-link">Cars</a></li> -->
-              <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li>
-              <li class="nav-item"><a href="contact.html" class="nav-link">Book Now</a></li>
-            </ul>
+          <!-- Center logo and brand name (Hidden on mobile view) -->
+          <div class="navbar-brand text-center mx-auto d-none d-lg-block">
+            <img src="images/ST.png" alt="Logo" class="logo">
+            <a href="index.html" class="brand-name d-block">Suresh <span class="small-text">Tours & Travels</span></a>
           </div>
+
+          <!-- Right side links -->
+          <ul class="navbar-nav ms-auto collapse navbar-collapse" id="navbarNav">
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="outStationToursDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Out Station Tours
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="outStationToursDropdown">
+                <li><a class="dropdown-item" href="out-stations-page.html">Temple Tours</a></li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="ourServicesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Our Services
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="ourServicesDropdown">
+                <li><a class="dropdown-item" href="services.html">Car Tours</a></li>
+              </ul>
+            </li>
+            <li class="nav-item"><a href="vehicles.html" class="nav-link">Our Vehicles</a></li>
+            <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+          </ul>
         </div>
       </nav>
-    <!-- END nav -->
 
-    <section class="hero-wrap hero-wrap-2 js-fullheight" style="background-image: url('images/bg_3.jpg');" data-stellar-background-ratio="0.5">
-      <div class="overlay"></div>
-      <div class="container">
-        <div class="row no-gutters slider-text js-fullheight align-items-end justify-content-start">
-          <div class="col-md-9 ftco-animate pb-5">
-          	<p class="breadcrumbs"><span class="mr-2"><a href="index.html">Home <i class="ion-ios-arrow-forward"></i></a></span> <span>Car details <i class="ion-ios-arrow-forward"></i></span></p>
-            <h1 class="mb-3 bread">Car Details</h1>
+
+
+  <!-- END nav -->
+
+  <section class="hero-carousel">
+    <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active" style="background-image: url('./images/etios_liva.webp');">
+          <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
+            <h1 class ="text-dark">Toyato Etios - Liva</h1>
+            <p style = "color: #000;font-size: 30px;">Rs.1,700/- per day</p>
           </div>
         </div>
+        <div class="carousel-item" style="background-image: url('./images/dzire.webp');">
+          <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
+            <h1 class ="text-dark">Maruthi Swift Dzire</h1>
+            <p style = "color: #000;font-size: 30px;">Rs.2,000/- per day</p>
+          </div>
+        </div>
+        <div class="carousel-item" style="background-image: url('./images/cresta.webp');">
+            <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
+              <h1 class ="text-dark">Innova Crysta</h1>
+              <p style = "color: #000;font-size: 30px;">Rs.3,500/- per day</p>
+            </div>
+          </div>
+        <!-- Add more carousel items as needed -->
       </div>
-    </section>
 
-
-		<section class="ftco-section ftco-car-details">
-      <div class="container">
-      	<div class="row justify-content-center">
-      		<div class="col-md-12">
-      			<div class="car-details">
-      				<div class="img rounded" style="background-image: url(images/innova.jpg);"></div>
-      				<div class="text text-center">
-      					<span class="subheading">Suresh Travels</span>
-      					<h2>Innova</h2>
-      				</div>
-      			</div>
-      		</div>
-      	</div>
-      	<div class="row">
-      		<div class="col-md d-flex align-self-stretch ftco-animate">
-            <div class="media block-6 services">
-              <div class="media-body py-md-4">
-              	<div class="d-flex mb-3 align-items-center">
-	              	<div class="icon d-flex align-items-center justify-content-center"><span class="flaticon-dashboard"></span></div>
-	              	<div class="text">
-		                <h3 class="heading mb-0 pl-3">
-		                	Mileage
-		                	<span>40,000</span>
-		                </h3>
-	                </div>
+      <!-- Carousel Controls -->
+      <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+  </section>
+<br>
+<section class="ftco-section ftco-car-details">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-12">
+                <div class="car-details">
+                    <div class="img rounded" style="background-image: url(images/innova.jpg);"></div>
+                    <div class="text text-center">
+                        <span class="subheading">Suresh Travels</span>
+                        <h2>Innova</h2>
+                    </div>
                 </div>
-              </div>
             </div>
-          </div>
-          <div class="col-md d-flex align-self-stretch ftco-animate">
-            <div class="media block-6 services">
-              <div class="media-body py-md-4">
-              	<div class="d-flex mb-3 align-items-center">
-	              	<div class="icon d-flex align-items-center justify-content-center"><span class="flaticon-pistons"></span></div>
-	              	<div class="text">
-		                <h3 class="heading mb-0 pl-3">
-		                	Transmission
-		                	<span>Manual</span>
-		                </h3>
-	                </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md d-flex align-self-stretch ftco-animate">
-            <div class="media block-6 services">
-              <div class="media-body py-md-4">
-              	<div class="d-flex mb-3 align-items-center">
-	              	<div class="icon d-flex align-items-center justify-content-center"><span class="flaticon-car-seat"></span></div>
-	              	<div class="text">
-		                <h3 class="heading mb-0 pl-3">
-		                	Seats
-		                	<span>5 Adults</span>
-		                </h3>
-	                </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md d-flex align-self-stretch ftco-animate">
-            <div class="media block-6 services">
-              <div class="media-body py-md-4">
-              	<div class="d-flex mb-3 align-items-center">
-	              	<div class="icon d-flex align-items-center justify-content-center"><span class="flaticon-backpack"></span></div>
-	              	<div class="text">
-		                <h3 class="heading mb-0 pl-3">
-		                	Luggage
-		                	<span>4 Bags</span>
-		                </h3>
-	                </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md d-flex align-self-stretch ftco-animate">
-            <div class="media block-6 services">
-              <div class="media-body py-md-4">
-              	<div class="d-flex mb-3 align-items-center">
-	              	<div class="icon d-flex align-items-center justify-content-center"><span class="flaticon-diesel"></span></div>
-	              	<div class="text">
-		                <h3 class="heading mb-0 pl-3">
-		                	Fuel
-		                	<span>Petrol</span>
-		                </h3>
-	                </div>
-                </div>
-              </div>
-            </div>
-          </div>
-      	</div>
-      	<div class="row">
-      		<div class="col-md-12 pills">
-						<div class="bd-example bd-example-tabs">
-							<div class="d-flex justify-content-center">
-							  <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
-
-							    <li class="nav-item">
-							      <a class="nav-link active" id="pills-description-tab" data-toggle="pill" href="#pills-description" role="tab" aria-controls="pills-description" aria-expanded="true">Features</a>
-							    </li>
-							    <li class="nav-item">
-							      <a class="nav-link" id="pills-manufacturer-tab" data-toggle="pill" href="#pills-manufacturer" role="tab" aria-controls="pills-manufacturer" aria-expanded="true">Description</a>
-							    </li>
-							    <li class="nav-item">
-							      <a class="nav-link" id="pills-review-tab" data-toggle="pill" href="#pills-review" role="tab" aria-controls="pills-review" aria-expanded="true">Review</a>
-							    </li>
-							  </ul>
-							</div>
-
-						  <div class="tab-content" id="pills-tabContent">
-						    <div class="tab-pane fade show active" id="pills-description" role="tabpanel" aria-labelledby="pills-description-tab">
-						    	<div class="row">
-						    		<div class="col-md-4">
-						    			<ul class="features">
-						    				<li class="check"><span class="ion-ios-checkmark"></span>Airconditions</li>
-						    				<li class="check"><span class="ion-ios-checkmark"></span>Child Seat</li>
-						    				<li class="check"><span class="ion-ios-checkmark"></span>GPS</li>
-						    				<li class="check"><span class="ion-ios-checkmark"></span>Luggage</li>
-						    				<li class="check"><span class="ion-ios-checkmark"></span>Music</li>
-						    			</ul>
-						    		</div>
-						    		<div class="col-md-4">
-						    			<ul class="features">
-						    				<li class="check"><span class="ion-ios-checkmark"></span>Seat Belt</li>
-						    				<li class="remove"><span class="ion-ios-close"></span>Sleeping Bed</li>
-						    				<li class="check"><span class="ion-ios-checkmark"></span>Water</li>
-						    				<li class="check"><span class="ion-ios-checkmark"></span>Bluetooth</li>
-						    				<li class="remove"><span class="ion-ios-close"></span>Onboard computer</li>
-						    			</ul>
-						    		</div>
-						    		<div class="col-md-4">
-						    			<ul class="features">
-						    				<li class="check"><span class="ion-ios-checkmark"></span>Audio input</li>
-						    				<li class="check"><span class="ion-ios-checkmark"></span>Long Term Trips</li>
-						    				<li class="check"><span class="ion-ios-checkmark"></span>Car Kit</li>
-						    				<li class="check"><span class="ion-ios-checkmark"></span>Remote central locking</li>
-						    				<li class="check"><span class="ion-ios-checkmark"></span>Climate control</li>
-						    			</ul>
-						    		</div>
-						    	</div>
-						    </div>
-
-						    <div class="tab-pane fade" id="pills-manufacturer" role="tabpanel" aria-labelledby="pills-manufacturer-tab">
-						      <p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar.</p>
-									<p>When she reached the first hills of the Italic Mountains, she had a last view back on the skyline of her hometown Bookmarksgrove, the headline of Alphabet Village and the subline of her own road, the Line Lane. Pityful a rethoric question ran over her cheek, then she continued her way.</p>
-						    </div>
-
-						    <div class="tab-pane fade" id="pills-review" role="tabpanel" aria-labelledby="pills-review-tab">
-						      <div class="row">
-							   		<div class="col-md-7">
-							   			<h3 class="head">23 Reviews</h3>
-							   			<div class="review d-flex">
-									   		<div class="user-img" style="background-image: url(images/person_1.jpg)"></div>
-									   		<div class="desc">
-									   			<h4>
-									   				<span class="text-left">Jacob Webb</span>
-									   				<span class="text-right">14 March 2018</span>
-									   			</h4>
-									   			<p class="star">
-									   				<span>
-									   					<i class="ion-ios-star"></i>
-									   					<i class="ion-ios-star"></i>
-									   					<i class="ion-ios-star"></i>
-									   					<i class="ion-ios-star"></i>
-									   					<i class="ion-ios-star"></i>
-								   					</span>
-								   					<span class="text-right"><a href="#" class="reply"><i class="icon-reply"></i></a></span>
-									   			</p>
-									   			<p>When she reached the first hills of the Italic Mountains, she had a last view back on the skyline of her hometown Bookmarksgrov</p>
-									   		</div>
-									   	</div>
-									   	<div class="review d-flex">
-									   		<div class="user-img" style="background-image: url(images/person_2.jpg)"></div>
-									   		<div class="desc">
-									   			<h4>
-									   				<span class="text-left">Jacob Webb</span>
-									   				<span class="text-right">14 March 2018</span>
-									   			</h4>
-									   			<p class="star">
-									   				<span>
-									   					<i class="ion-ios-star"></i>
-									   					<i class="ion-ios-star"></i>
-									   					<i class="ion-ios-star"></i>
-									   					<i class="ion-ios-star"></i>
-									   					<i class="ion-ios-star"></i>
-								   					</span>
-								   					<span class="text-right"><a href="#" class="reply"><i class="icon-reply"></i></a></span>
-									   			</p>
-									   			<p>When she reached the first hills of the Italic Mountains, she had a last view back on the skyline of her hometown Bookmarksgrov</p>
-									   		</div>
-									   	</div>
-									   	<div class="review d-flex">
-									   		<div class="user-img" style="background-image: url(images/person_3.jpg)"></div>
-									   		<div class="desc">
-									   			<h4>
-									   				<span class="text-left">Jacob Webb</span>
-									   				<span class="text-right">14 March 2018</span>
-									   			</h4>
-									   			<p class="star">
-									   				<span>
-									   					<i class="ion-ios-star"></i>
-									   					<i class="ion-ios-star"></i>
-									   					<i class="ion-ios-star"></i>
-									   					<i class="ion-ios-star"></i>
-									   					<i class="ion-ios-star"></i>
-								   					</span>
-								   					<span class="text-right"><a href="#" class="reply"><i class="icon-reply"></i></a></span>
-									   			</p>
-									   			<p>When she reached the first hills of the Italic Mountains, she had a last view back on the skyline of her hometown Bookmarksgrov</p>
-									   		</div>
-									   	</div>
-							   		</div>
-							   		<div class="col-md-5">
-							   			<div class="rating-wrap">
-								   			<h3 class="head">Give a Review</h3>
-								   			<div class="wrap">
-									   			<p class="star">
-									   				<span>
-									   					<i class="ion-ios-star"></i>
-									   					<i class="ion-ios-star"></i>
-									   					<i class="ion-ios-star"></i>
-									   					<i class="ion-ios-star"></i>
-									   					<i class="ion-ios-star"></i>
-									   					(98%)
-								   					</span>
-								   					<span>20 Reviews</span>
-									   			</p>
-									   			<p class="star">
-									   				<span>
-									   					<i class="ion-ios-star"></i>
-									   					<i class="ion-ios-star"></i>
-									   					<i class="ion-ios-star"></i>
-									   					<i class="ion-ios-star"></i>
-									   					<i class="ion-ios-star"></i>
-									   					(85%)
-								   					</span>
-								   					<span>10 Reviews</span>
-									   			</p>
-									   			<p class="star">
-									   				<span>
-									   					<i class="ion-ios-star"></i>
-									   					<i class="ion-ios-star"></i>
-									   					<i class="ion-ios-star"></i>
-									   					<i class="ion-ios-star"></i>
-									   					<i class="ion-ios-star"></i>
-									   					(70%)
-								   					</span>
-								   					<span>5 Reviews</span>
-									   			</p>
-									   			<p class="star">
-									   				<span>
-									   					<i class="ion-ios-star"></i>
-									   					<i class="ion-ios-star"></i>
-									   					<i class="ion-ios-star"></i>
-									   					<i class="ion-ios-star"></i>
-									   					<i class="ion-ios-star"></i>
-									   					(10%)
-								   					</span>
-								   					<span>0 Reviews</span>
-									   			</p>
-									   			<p class="star">
-									   				<span>
-									   					<i class="ion-ios-star"></i>
-									   					<i class="ion-ios-star"></i>
-									   					<i class="ion-ios-star"></i>
-									   					<i class="ion-ios-star"></i>
-									   					<i class="ion-ios-star"></i>
-									   					(0%)
-								   					</span>
-								   					<span>0 Reviews</span>
-									   			</p>
-									   		</div>
-								   		</div>
-							   		</div>
-							   	</div>
-						    </div>
-						  </div>
-						</div>
-                        <a href = "contact.html" class ="btn btn-primary">Book Now</a>
-		      </div>
-				</div>
-      </div>
-    </section>
-
-    <section class="ftco-section ftco-no-pt">
-    	<div class="container">
-    		<div class="row justify-content-center">
-          <div class="col-md-12 heading-section text-center ftco-animate mb-5">
-          	<span class="subheading">Choose Car</span>
-            <h2 class="mb-2">Related Cars</h2>
-          </div>
         </div>
         <div class="row">
-        	<div class="col-md-4">
-    				<div class="car-wrap rounded ftco-animate">
-    					<div class="img rounded d-flex align-items-end" style="background-image: url(images/indica.webp);">
-    					</div>
-    					<div class="text">
-    						<h2 class="mb-0"><a href="car-single.html">Tata Indica</a></h2>
-    						<div class="d-flex mb-3">
-	    						<span class="cat">Suresh Travels</span>
-	    						<p class="price ml-auto">Rs.10/- <span>per km</span></p>
-    						</div>
-    						<p class="d-flex mb-0 d-block"><a href="contact.html" class="btn btn-primary py-2 mr-1">Book now</a> <a href="car-single.html" class="btn btn-secondary py-2 ml-1">Details</a></p>
-    					</div>
-    				</div>
-    			</div>
-    			<div class="col-md-4">
-    				<div class="car-wrap rounded ftco-animate">
-    					<div class="img rounded d-flex align-items-end" style="background-image: url(images/TEMPO-Travel.jpg);">
-    					</div>
-    					<div class="text">
-    						<h2 class="mb-0"><a href="car-single.html">Tempo Traveller</a></h2>
-    						<div class="d-flex mb-3">
-	    						<span class="cat">Suresh Travels</span>
-	    						<p class="price ml-auto">Rs.15/- <span>per km</span></p>
-    						</div>
-    						<p class="d-flex mb-0 d-block"><a href="contact.html" class="btn btn-primary py-2 mr-1">Book now</a> <a href="car-single.html" class="btn btn-secondary py-2 ml-1">Details</a></p>
-    					</div>
-    				</div>
-    			</div>
-    			<div class="col-md-4">
-    				<div class="car-wrap rounded ftco-animate">
-    					<div class="img rounded d-flex align-items-end" style="background-image: url(images/TAVERA-Travel.jpg);">
-    					</div>
-    					<div class="text">
-    						<h2 class="mb-0"><a href="car-single.html">Tavera</a></h2>
-    						<div class="d-flex mb-3">
-	    						<span class="cat">Suresh Travels</span>
-	    						<p class="price ml-auto">Rs.15/- <span>per km</span></p>
-    						</div>
-    						<p class="d-flex mb-0 d-block"><a href="contact.html" class="btn btn-primary py-2 mr-1">Book now</a> <a href="car-single.html" class="btn btn-secondary py-2 ml-1">Details</a></p>
-    					</div>
-    				</div>
-    			</div>
-        </div>
-    	</div>
-    </section>
-
-
-    <footer class="ftco-footer ftco-bg-dark ftco-section">
-        <div class="container">
-          <div class="row mb-5">
-            <div class="col-md">
-              <div class="ftco-footer-widget mb-4">
-                <img src="images/ST.png" alt="" width="100px">
-                <h6>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the
-                  blind texts.</h6>
-                <ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-5">
-                  <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
-                  <li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
-                  <li class="ftco-animate"><a href="#"><span class="icon-instagram"></span></a></li>
-                </ul>
-              </div>
-            </div>
-            <div class="col-md">
-              <div class="ftco-footer-widget mb-4 ml-md-5">
-                <h2 class="ftco-heading-2">Information</h2>
-                <ul class="list-unstyled">
-                  <li><a href="about.html" class="py-2 d-block">About</a></li>
-                  <li><a href="services.html" class="py-2 d-block">Services</a></li>
-                  <li><a href="blog.html" class="py-2 d-block">Blogs</a></li>
-                  <!-- <li><a href="#" class="py-2 d-block">Best Price Guarantee</a></li>
-                  <li><a href="#" class="py-2 d-block">Privacy &amp; Cookies Policy</a></li> -->
-                </ul>
-              </div>
-            </div>
-            <div class="col-md">
-              <div class="ftco-footer-widget mb-4">
-                <h2 class="ftco-heading-2">Customer Support</h2>
-                <ul class="list-unstyled">
-                  <li><a href="terms.html" class="py-2 d-block">Term and Conditions</a></li>
-                  <li><a href="faq.html" class="py-2 d-block">FAQ</a></li>
-                  <!-- <li><a href="#" class="py-2 d-block">Payment Option</a></li>
-                  <li><a href="#" class="py-2 d-block">Booking Tips</a></li>
-                  <li><a href="#" class="py-2 d-block">How it works</a></li> -->
-
-                </ul>
-              </div>
-            </div>
-            <div class="col-md">
-              <div class="ftco-footer-widget mb-4">
-                <h2 class="ftco-heading-2">Have a Questions?</h2>
-                <div class="block-23 mb-3">
-                  <ul>
-                    <li><span class="icon icon-map-marker"></span><span class="text">G. Suresh Tirupati all Cabs # Lingeswar Nagar, Bairagi patteda, Tirupati, Andhra Pradesh 517501</span></li>
-                    <li><a href="#"><span class="icon icon-phone"></span><span class="text">+91 95023 60032/ 90109 36936</span></a></li>
-                    <li><a href="#"><span class="icon icon-envelope " style="margin-right: 3px;"></span><span class="text">
-                        sureshtravels529@gmail.com</span></a></li>
-                  </ul>
-                </div>
+            <div class="col-md d-flex align-self-stretch ftco-animate">
+          <div class="media block-6 services">
+            <div class="media-body py-md-4">
+                <div class="d-flex mb-3 align-items-center">
+                    <div class="icon d-flex align-items-center justify-content-center"><span class="flaticon-dashboard"></span></div>
+                    <div class="text">
+                      <h3 class="heading mb-0 pl-3">
+                          Mileage
+                          <span>40,000</span>
+                      </h3>
+                  </div>
               </div>
             </div>
           </div>
-          <div class="row">
-            <div class="col-md-12 text-center">
-
-              <p>
-                Copyright &copy;
-                <script>document.write(new Date().getFullYear());</script> All rights reserved | <a class="navbar-brand"
-                  href="index.html">Suresh <span color="red">Tours & Travels</span></a>
-
-
-              </p>
+        </div>
+        <div class="col-md d-flex align-self-stretch ftco-animate">
+          <div class="media block-6 services">
+            <div class="media-body py-md-4">
+                <div class="d-flex mb-3 align-items-center">
+                    <div class="icon d-flex align-items-center justify-content-center"><span class="flaticon-pistons"></span></div>
+                    <div class="text">
+                      <h3 class="heading mb-0 pl-3">
+                          Transmission
+                          <span>Manual</span>
+                      </h3>
+                  </div>
+              </div>
             </div>
           </div>
         </div>
-      </footer>
+        <div class="col-md d-flex align-self-stretch ftco-animate">
+          <div class="media block-6 services">
+            <div class="media-body py-md-4">
+                <div class="d-flex mb-3 align-items-center">
+                    <div class="icon d-flex align-items-center justify-content-center"><span class="flaticon-car-seat"></span></div>
+                    <div class="text">
+                      <h3 class="heading mb-0 pl-3">
+                          Seats
+                          <span>5 Adults</span>
+                      </h3>
+                  </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md d-flex align-self-stretch ftco-animate">
+          <div class="media block-6 services">
+            <div class="media-body py-md-4">
+                <div class="d-flex mb-3 align-items-center">
+                    <div class="icon d-flex align-items-center justify-content-center"><span class="flaticon-backpack"></span></div>
+                    <div class="text">
+                      <h3 class="heading mb-0 pl-3">
+                          Luggage
+                          <span>4 Bags</span>
+                      </h3>
+                  </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md d-flex align-self-stretch ftco-animate">
+          <div class="media block-6 services">
+            <div class="media-body py-md-4">
+                <div class="d-flex mb-3 align-items-center">
+                    <div class="icon d-flex align-items-center justify-content-center"><span class="flaticon-diesel"></span></div>
+                    <div class="text">
+                      <h3 class="heading mb-0 pl-3">
+                          Fuel
+                          <span>Petrol</span>
+                      </h3>
+                  </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 pills">
+                      <div class="bd-example bd-example-tabs">
+                          <div class="d-flex justify-content-center">
+                            <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+
+                              <li class="nav-item">
+                                <a class="nav-link active" id="pills-description-tab" data-toggle="pill" href="#pills-description" role="tab" aria-controls="pills-description" aria-expanded="true">Features</a>
+                              </li>
+                              <li class="nav-item">
+                                <a class="nav-link" id="pills-manufacturer-tab" data-toggle="pill" href="#pills-manufacturer" role="tab" aria-controls="pills-manufacturer" aria-expanded="true">Description</a>
+                              </li>
+                              <li class="nav-item">
+                                <a class="nav-link" id="pills-review-tab" data-toggle="pill" href="#pills-review" role="tab" aria-controls="pills-review" aria-expanded="true">Review</a>
+                              </li>
+                            </ul>
+                          </div>
+
+                        <div class="tab-content" id="pills-tabContent">
+                          <div class="tab-pane fade show active" id="pills-description" role="tabpanel" aria-labelledby="pills-description-tab">
+                              <div class="row">
+                                  <div class="col-md-4">
+                                      <ul class="features">
+                                          <li class="check"><span class="ion-ios-checkmark"></span>Airconditions</li>
+                                          <li class="check"><span class="ion-ios-checkmark"></span>Child Seat</li>
+                                          <li class="check"><span class="ion-ios-checkmark"></span>GPS</li>
+                                          <li class="check"><span class="ion-ios-checkmark"></span>Luggage</li>
+                                          <li class="check"><span class="ion-ios-checkmark"></span>Music</li>
+                                      </ul>
+                                  </div>
+                                  <div class="col-md-4">
+                                      <ul class="features">
+                                          <li class="check"><span class="ion-ios-checkmark"></span>Seat Belt</li>
+                                          <li class="remove"><span class="ion-ios-close"></span>Sleeping Bed</li>
+                                          <li class="check"><span class="ion-ios-checkmark"></span>Water</li>
+                                          <li class="check"><span class="ion-ios-checkmark"></span>Bluetooth</li>
+                                          <li class="remove"><span class="ion-ios-close"></span>Onboard computer</li>
+                                      </ul>
+                                  </div>
+                                  <div class="col-md-4">
+                                      <ul class="features">
+                                          <li class="check"><span class="ion-ios-checkmark"></span>Audio input</li>
+                                          <li class="check"><span class="ion-ios-checkmark"></span>Long Term Trips</li>
+                                          <li class="check"><span class="ion-ios-checkmark"></span>Car Kit</li>
+                                          <li class="check"><span class="ion-ios-checkmark"></span>Remote central locking</li>
+                                          <li class="check"><span class="ion-ios-checkmark"></span>Climate control</li>
+                                      </ul>
+                                  </div>
+                              </div>
+                          </div>
+
+                          <div class="tab-pane fade" id="pills-manufacturer" role="tabpanel" aria-labelledby="pills-manufacturer-tab">
+                            <p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar.</p>
+                                  <p>When she reached the first hills of the Italic Mountains, she had a last view back on the skyline of her hometown Bookmarksgrove, the headline of Alphabet Village and the subline of her own road, the Line Lane. Pityful a rethoric question ran over her cheek, then she continued her way.</p>
+                          </div>
+
+                          <div class="tab-pane fade" id="pills-review" role="tabpanel" aria-labelledby="pills-review-tab">
+                            <div class="row">
+                                     <div class="col-md-7">
+                                         <h3 class="head">23 Reviews</h3>
+                                         <div class="review d-flex">
+                                             <div class="user-img" style="background-image: url(images/person_1.jpg)"></div>
+                                             <div class="desc">
+                                                 <h4>
+                                                     <span class="text-left">Jacob Webb</span>
+                                                     <span class="text-right">14 March 2018</span>
+                                                 </h4>
+                                                 <p class="star">
+                                                     <span>
+                                                         <i class="ion-ios-star"></i>
+                                                         <i class="ion-ios-star"></i>
+                                                         <i class="ion-ios-star"></i>
+                                                         <i class="ion-ios-star"></i>
+                                                         <i class="ion-ios-star"></i>
+                                                     </span>
+                                                     <span class="text-right"><a href="#" class="reply"><i class="icon-reply"></i></a></span>
+                                                 </p>
+                                                 <p>When she reached the first hills of the Italic Mountains, she had a last view back on the skyline of her hometown Bookmarksgrov</p>
+                                             </div>
+                                         </div>
+                                         <div class="review d-flex">
+                                             <div class="user-img" style="background-image: url(images/person_2.jpg)"></div>
+                                             <div class="desc">
+                                                 <h4>
+                                                     <span class="text-left">Jacob Webb</span>
+                                                     <span class="text-right">14 March 2018</span>
+                                                 </h4>
+                                                 <p class="star">
+                                                     <span>
+                                                         <i class="ion-ios-star"></i>
+                                                         <i class="ion-ios-star"></i>
+                                                         <i class="ion-ios-star"></i>
+                                                         <i class="ion-ios-star"></i>
+                                                         <i class="ion-ios-star"></i>
+                                                     </span>
+                                                     <span class="text-right"><a href="#" class="reply"><i class="icon-reply"></i></a></span>
+                                                 </p>
+                                                 <p>When she reached the first hills of the Italic Mountains, she had a last view back on the skyline of her hometown Bookmarksgrov</p>
+                                             </div>
+                                         </div>
+                                         <div class="review d-flex">
+                                             <div class="user-img" style="background-image: url(images/person_3.jpg)"></div>
+                                             <div class="desc">
+                                                 <h4>
+                                                     <span class="text-left">Jacob Webb</span>
+                                                     <span class="text-right">14 March 2018</span>
+                                                 </h4>
+                                                 <p class="star">
+                                                     <span>
+                                                         <i class="ion-ios-star"></i>
+                                                         <i class="ion-ios-star"></i>
+                                                         <i class="ion-ios-star"></i>
+                                                         <i class="ion-ios-star"></i>
+                                                         <i class="ion-ios-star"></i>
+                                                     </span>
+                                                     <span class="text-right"><a href="#" class="reply"><i class="icon-reply"></i></a></span>
+                                                 </p>
+                                                 <p>When she reached the first hills of the Italic Mountains, she had a last view back on the skyline of her hometown Bookmarksgrov</p>
+                                             </div>
+                                         </div>
+                                     </div>
+                                     <div class="col-md-5">
+                                         <div class="rating-wrap">
+                                             <h3 class="head">Give a Review</h3>
+                                             <div class="wrap">
+                                                 <p class="star">
+                                                     <span>
+                                                         <i class="ion-ios-star"></i>
+                                                         <i class="ion-ios-star"></i>
+                                                         <i class="ion-ios-star"></i>
+                                                         <i class="ion-ios-star"></i>
+                                                         <i class="ion-ios-star"></i>
+                                                         (98%)
+                                                     </span>
+                                                     <span>20 Reviews</span>
+                                                 </p>
+                                                 <p class="star">
+                                                     <span>
+                                                         <i class="ion-ios-star"></i>
+                                                         <i class="ion-ios-star"></i>
+                                                         <i class="ion-ios-star"></i>
+                                                         <i class="ion-ios-star"></i>
+                                                         <i class="ion-ios-star"></i>
+                                                         (85%)
+                                                     </span>
+                                                     <span>10 Reviews</span>
+                                                 </p>
+                                                 <p class="star">
+                                                     <span>
+                                                         <i class="ion-ios-star"></i>
+                                                         <i class="ion-ios-star"></i>
+                                                         <i class="ion-ios-star"></i>
+                                                         <i class="ion-ios-star"></i>
+                                                         <i class="ion-ios-star"></i>
+                                                         (70%)
+                                                     </span>
+                                                     <span>5 Reviews</span>
+                                                 </p>
+                                                 <p class="star">
+                                                     <span>
+                                                         <i class="ion-ios-star"></i>
+                                                         <i class="ion-ios-star"></i>
+                                                         <i class="ion-ios-star"></i>
+                                                         <i class="ion-ios-star"></i>
+                                                         <i class="ion-ios-star"></i>
+                                                         (10%)
+                                                     </span>
+                                                     <span>0 Reviews</span>
+                                                 </p>
+                                                 <p class="star">
+                                                     <span>
+                                                         <i class="ion-ios-star"></i>
+                                                         <i class="ion-ios-star"></i>
+                                                         <i class="ion-ios-star"></i>
+                                                         <i class="ion-ios-star"></i>
+                                                         <i class="ion-ios-star"></i>
+                                                         (0%)
+                                                     </span>
+                                                     <span>0 Reviews</span>
+                                                 </p>
+                                             </div>
+                                         </div>
+                                     </div>
+                                 </div>
+                          </div>
+                        </div>
+                      </div>
+                      <a href = "book-now.html" class ="btn btn-primary">Book Now</a>
+            </div>
+              </div>
+    </div>
+  </section>
+
+  <section class="ftco-section ftco-no-pt">
+      <div class="container">
+          <div class="row justify-content-center">
+        <div class="col-md-12 heading-section text-center ftco-animate mb-5">
+            <span class="subheading">Choose Car</span>
+          <h2 class="mb-2">Related Cars</h2>
+        </div>
+      </div>
+      <div class="row">
+          <div class="col-md-4">
+                  <div class="car-wrap rounded ftco-animate">
+                <a href="#" class="enquiry-label" data-bs-toggle="modal" data-bs-target="#exampleModal">Send Enquiry</a>
+
+                      <div class="img rounded d-flex align-items-end" style="background-image: url(images/indica.webp);">
+                      </div>
+                      <div class="text">
+
+                          <h2 class="mb-0"><a href="car-single.html">Toyato Etios - Liva</a></h2>
+                          <div class="d-flex mb-3">
+                              <span class="cat">Suresh Travels</span>
+                              <p class="price ml-auto">Rs.1,700/- <span>per day</span></p>
+                          </div>
+                          <p class="d-flex mb-0 d-block"><a href="book-now.html" class="btn btn-primary py-2 mr-1">Book now</a> <a href="car-single.html" class="btn btn-secondary py-2 ml-1">Details</a></p>
+                      </div>
+                  </div>
+              </div>
+              <div class="col-md-4">
+                  <div class="car-wrap rounded ftco-animate">
+                <a href="#" class="enquiry-label" data-bs-toggle="modal" data-bs-target="#exampleModal">Send Enquiry</a>
+                      <div class="img rounded d-flex align-items-end" style="background-image: url(images/TEMPO-Travel.jpg);">
+                      </div>
+                      <div class="text">
+                          <h2 class="mb-0"><a href="car-single.html">Tempo Traveller</a></h2>
+                          <div class="d-flex mb-3">
+                              <span class="cat">Suresh Travels</span>
+                              <p class="price ml-auto">Rs.4,000/- <span>per day</span></p>
+                          </div>
+                          <p class="d-flex mb-0 d-block"><a href="book-now.html" class="btn btn-primary py-2 mr-1">Book now</a> <a href="car-single.html" class="btn btn-secondary py-2 ml-1">Details</a></p>
+                      </div>
+                  </div>
+              </div>
+              <div class="col-md-4">
+                  <div class="car-wrap rounded ftco-animate">
+                <a href="#" class="enquiry-label" data-bs-toggle="modal" data-bs-target="#exampleModal">Send Enquiry</a>
+                      <div class="img rounded d-flex align-items-end" style="background-image: url(images/TAVERA-Travel.jpg);">
+                      </div>
+                      <div class="text">
+                          <h2 class="mb-0"><a href="car-single.html">Tavera</a></h2>
+                          <div class="d-flex mb-3">
+                              <span class="cat">Suresh Travels</span>
+                              <p class="price ml-auto">Rs.3,000/- <span>per day</span></p>
+                          </div>
+                          <p class="d-flex mb-0 d-block"><a href="book-now.html" class="btn btn-primary py-2 mr-1">Book now</a> <a href="car-single.html" class="btn btn-secondary py-2 ml-1">Details</a></p>
+                      </div>
+                  </div>
+              </div>
+      </div>
+      </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-section">
+        <h5>Contact Us</h5>
+        <p>Email: sureshtravels529@gmail.com</p>
+        <p>Phone: +91 95023 60032/ 90109 36936</p>
+      </div>
+      <div class="footer-section">
+        <h5>Address</h5>
+        <p>G. Suresh Tirupati all Cabs # Lingeswar Nagar, Bairagi patteda, Tirupati, Andhra Pradesh 517501</p>
+      </div>
+      <div class="footer-section">
+        <h5>Follow Us</h5>
+        <p><a href="#"><span class = "icon-facebook"></span></a> | <a href="#"><span class = "icon-twitter"></span></a> | <a href="#"><span class = "icon-instagram"></span></a></p>
+      </div>
+      <div class="footer-section">
+        <h5>Links</h5>
+        <p><a href="index.html">Home</a> | <a href="about.html">About Us</a> | <a href="vehicles.html">Our Vehicles</a> | <a href="contact.html">Contact</a></p>
+      </div>
+      <div class="footer-section">
+        <p>&copy; <script>document.write(new Date().getFullYear());</script> Suresh Tours & Travels. All rights reserved.</p>
+      </div>
+      <div class="footer-section">
+        <p>Designed By IES.</p>
+      </div>
+    </div>
+  </footer>
+  <a href="#" class="enquiry-button-side" data-bs-toggle="modal" data-bs-target="#exampleModal">Send Enquiry</a>
+
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Enquiry Form</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <!-- Add your enquiry form here -->
+          <form>
+            <div class="mb-3">
+              <label for="name" class="form-label">Name</label>
+              <input type="text" class="form-control" id="name" placeholder="Your Name">
+            </div>
+            <div class="mb-3">
+              <label for="email" class="form-label">Email address</label>
+              <input type="email" class="form-control" id="email" placeholder="Your Email">
+            </div>
+            <div class="mb-3">
+              <label for="message" class="form-label">Enquires</label>
+              <textarea class="form-control" id="message" rows="3" placeholder="Your Enquires   "></textarea>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Send Enquiry</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!------------Whats APP Start------------->
+  <!-- <div class="whatsapp">
+    <a href="https://wa.me/8686605863"> <i class="fa-brands fa-whatsapp fa-beat fa-2xl"
+        style="color: rgb(0, 255, 34);"></i></a>
+  </div>
+
+  <div class="call">
+    <a href="tel:+917660953398"> <i class="fa-solid fa-phone fa-beat fa-2xl" style="color: #035efc;"></i></a>
+  </div> -->
+  <!-------Whats APP END-->
 
 
 
   <!-- loader -->
-  <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
+  <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px">
+      <circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee" />
+      <circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10"
+        stroke="#F96D00" />
+    </svg></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 
 
   <script src="js/jquery.min.js"></script>
@@ -496,9 +868,11 @@
   <script src="js/bootstrap-datepicker.js"></script>
   <script src="js/jquery.timepicker.min.js"></script>
   <script src="js/scrollax.min.js"></script>
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
+  <script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
   <script src="js/google-map.js"></script>
   <script src="js/main.js"></script>
 
-  </body>
+</body>
+
 </html>
